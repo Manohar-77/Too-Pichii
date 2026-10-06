@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For Ammu ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <audio id="birthdayMusic" loop>
+    <source src="music/birthday.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="crackersMusic" loop>
+    <source src="music/crackers.mp3" type="audio/mpeg">
+</audio>
+
+    <!-- =========================
+         SCENE 1 — OPENING
+    ========================== -->
+
+    <section class="scene opening-scene" id="openingScene">
+
+        <div class="opening-content">
+
+            <p class="small-text">
+                HEY CUTIE...
+            </p>
+
+            <h1>
+                A little surprise<br>
+                for you 💗
+            </h1>
+
+            <button id="startBtn">
+                Begin the Surprise ✨
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SCENE 2 — CAKE
+    ========================== -->
+
+    <section class="scene cake-scene" id="cakeScene">
+
+        <div class="cake-wrapper">
+
+            <!-- TOP LAYER -->
+            <div class="cake-layer cake-top">
+                <div class="cream"></div>
+            </div>
+
+            <!-- MIDDLE LAYER -->
+            <div class="cake-layer cake-middle">
+                <div class="cream"></div>
+            </div>
+
+            <!-- BOTTOM LAYER -->
+            <div class="cake-layer cake-bottom">
+                <div class="cream"></div>
+            </div>
+
+            <!-- CANDLES -->
+            <div class="candles">
+
+                <div class="candle candle-1">
+                    <div class="flame"></div>
+                </div>
+
+                <div class="candle candle-2">
+                    <div class="flame"></div>
+                </div>
+
+                <div class="candle candle-3">
+                    <div class="flame"></div>
+                </div>
+
+                <div class="candle candle-4">
+                    <div class="flame"></div>
+                </div>
+
+                <div class="candle candle-5">
+                    <div class="flame"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="cake-message">
+
+            <p>
+                Make a wish, Ammu... ✨
+            </p>
+
+            <button id="cakeNextBtn">
+                Continue 💗
+            </button>
+
+        </div>
+
+    </section>
+    <!-- =========================
+     SCENE 3 — BALLOONS
+========================== -->
+
+<section class="scene balloon-scene" id="balloonScene">
+
+    <div class="balloon-header">
+
+        <p class="small-text">
+            A LITTLE SOMETHING ABOUT YOU...
+        </p>
+
+        <h2>
+            Pop the balloons 🎈
+        </h2>
+
+        <p>
+            Five little surprises are waiting for you.
+        </p>
+
+    </div>
+
+
+    <div class="balloon-area">
+
+        <!-- BALLOON 1 -->
+        <div class="balloon-container" data-index="0">
+            <div class="balloon">
+                <span>1</span>
+            </div>
+
+            <div class="balloon-string"></div>
+        </div>
+
+
+        <!-- BALLOON 2 -->
+        <div class="balloon-container" data-index="1">
+            <div class="balloon">
+                <span>2</span>
+            </div>
+
+            <div class="balloon-string"></div>
+        </div>
+
+
+        <!-- BALLOON 3 -->
+        <div class="balloon-container" data-index="2">
+            <div class="balloon">
+                <span>3</span>
+            </div>
+
+            <div class="balloon-string"></div>
+        </div>
+
+
+        <!-- BALLOON 4 -->
+        <div class="balloon-container" data-index="3">
+            <div class="balloon">
+                <span>4</span>
+            </div>
+
+            <div class="balloon-string"></div>
+        </div>
+
+
+        <!-- BALLOON 5 -->
+        <div class="balloon-container" data-index="4">
+            <div class="balloon">
+                <span>5</span>
+            </div>
+
+            <div class="balloon-string"></div>
+        </div>
+
+    </div>
+
+
+    <!-- MESSAGE -->
+    <div class="balloon-message" id="balloonMessage">
+
+        <div class="message-card">
+
+            <button
+                class="close-message"
+                id="closeMessage">
+                ×
+            </button>
+
+            <p id="messageText"></p>
+
+        </div>
+
+    </div>
+
+
+    <button
+        class="balloon-next"
+        id="balloonNextBtn">
+
+        Continue to Memories 📸
+
+    </button>
+
+</section>
+<!-- =========================
+     SCENE 4 — MEMORY JOURNEY
+========================== -->
+<section class="scene memory-scene" id="memoryScene">
+
+    <div class="memory-header">
+        <p class="small-text">OUR LITTLE MEMORIES...</p>
+        <h2>Memory Journey 📸</h2>
+        <p>Some moments I will always remember.</p>
+    </div>
+
+    <div class="memory-card">
+
+        <div class="memory-photo-wrapper">
+            <img id="memoryPhoto" src="images/photo1.jpg" alt="Memory">
+        </div>
+
+        <p class="memory-counter" id="memoryCounter">
+            1 / 5
+        </p>
+
+        <p class="memory-caption" id="memoryCaption">
+            Our beautiful memory ❤️
+        </p>
+
+    </div>
+
+    <div class="memory-controls">
+
+        <button id="previousMemoryBtn">
+            ← Previous
+        </button>
+
+        <button id="nextMemoryBtn">
+            Next →
+        </button>
+
+    </div>
+
+    <button id="memoryContinueBtn">
+        Continue to Your Letter 💌
+    </button>
+
+</section>
+<!-- =========================
+     SCENE 5 — LETTER
+========================== -->
+<section class="scene letter-scene" id="letterScene">
+
+    <div class="letter-intro">
+        <p class="small-text">ONE LAST LITTLE THING...</p>
+        <h2>A Letter For You 💗</h2>
+        <p>Something I wanted you to read today.</p>
+    </div>
+
+    <div class="envelope-wrapper" id="envelopeWrapper">
+
+        <div class="envelope">
+
+            <!-- Letter inside -->
+            <div class="letter-paper" id="letterPaper">
+
+                <div class="letter-content">
+
+                    <h3>To My Pichiii ❤️</h3>
+
+                    <p>
+                        Happy Birthday, Ammu! 🎂
+                    </p>
+
+                    <p>
+                        You are someone who makes
+                        ordinary moments feel special.
+                    </p>
+
+                    <p>
+                        I hope this birthday brings you
+                        everything your heart wishes for.
+                    </p>
+
+                    <p>
+                        Keep smiling and keep being
+                        the amazing person you are. ❤️
+                    </p>
+
+                    <p class="letter-signature">
+                        With lots of love 💗
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- Envelope -->
+            <div class="envelope-back"></div>
+            <div class="envelope-front"></div>
+            <div class="envelope-flap"></div>
+
+            <!-- Heart seal -->
+            <button class="heart-seal" id="heartSeal">
+                ❤️
+            </button>
+
+        </div>
+
+    </div>
+
+    <p class="letter-hint" id="letterHint">
+        Tap the heart to open your letter ❤️
+    </p>
+
+    <button class="letter-next" id="letterNextBtn">
+        Continue to the Final Surprise ✨
+    </button>
+
+</section>
+<!-- =========================
+     SCENE 6 — FINAL FIREWORKS
+========================== -->
+
+<section class="scene final-scene" id="finalScene">
+
+    <canvas id="fireworksCanvas"></canvas>
+
+    <div class="final-message" id="finalMessage">
+
+        <div class="final-small-text">
+            FOR YOU, AMMU...
+        </div>
+
+        <h1>
+            HAPPY BIRTHDAY<br>
+            RA AMMU 🌎❤️
+        </h1>
+
+        <div class="final-hearts">
+            ❤️ ✨ ❤️
+        </div>
+
+    </div>
+
+</section>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,1711 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, serif;
+    background: white;
+    color: black;
+    overflow: hidden;
+}
+
+.scene {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+}
+
+.opening-scene {
+    background: white;
+}
+
+.opening-content {
+    text-align: center;
+
+    animation: fadeIn 2s ease forwards;
+}
+
+.small-text {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    letter-spacing: 5px;
+
+    margin-bottom: 20px;
+
+    opacity: 0.7;
+}
+
+h1 {
+    font-size: clamp(40px, 7vw, 80px);
+    font-weight: 400;
+    line-height: 1.1;
+
+    margin-bottom: 40px;
+}
+
+#startBtn {
+    border: 1px solid #d98ca5;
+
+    background: white;
+    color: black;
+
+    padding: 15px 30px;
+
+    border-radius: 50px;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+#startBtn:hover {
+    background: #d98ca5;
+    color: white;
+
+    transform: translateY(-3px);
+}
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+/* ===================================
+   CAKE SCENE
+=================================== */
+
+.cake-scene {
+    background: white;
+
+    display: none;
+
+    flex-direction: column;
+
+    overflow: hidden;
+}
+
+
+/* ===================================
+   CAKE WRAPPER
+=================================== */
+
+.cake-wrapper {
+
+    position: relative;
+
+    width: 360px;
+    height: 350px;
+
+    margin-top: 40px;
+}
+
+
+/* ===================================
+   CAKE LAYERS
+=================================== */
+
+.cake-layer {
+
+    position: absolute;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    border-radius: 12px;
+
+    background: #f3b6c8;
+
+    box-shadow:
+        0 12px 25px rgba(0, 0, 0, 0.12);
+
+}
+
+
+/* Bottom */
+
+.cake-bottom {
+
+    width: 300px;
+    height: 90px;
+
+    bottom: 20px;
+
+    z-index: 1;
+
+    animation: cakeBottomDrop 1s ease forwards;
+}
+
+
+/* Middle */
+
+.cake-middle {
+
+    width: 240px;
+    height: 75px;
+
+    bottom: 105px;
+
+    z-index: 2;
+
+    opacity: 0;
+
+    animation:
+        cakeMiddleDrop 1s ease 0.8s forwards;
+}
+
+
+/* Top */
+
+.cake-top {
+
+    width: 180px;
+    height: 65px;
+
+    bottom: 177px;
+
+    z-index: 3;
+
+    opacity: 0;
+
+    animation:
+        cakeTopDrop 1s ease 1.6s forwards;
+}
+
+
+/* ===================================
+   CREAM
+=================================== */
+
+.cream {
+
+    position: absolute;
+
+    left: 0;
+    top: -8px;
+
+    width: 100%;
+    height: 15px;
+
+    background: white;
+
+    border-radius: 50%;
+}
+
+
+/* ===================================
+   CAKE ANIMATIONS
+=================================== */
+
+@keyframes cakeBottomDrop {
+
+    from {
+        transform:
+            translateX(-50%)
+            translateY(-500px);
+
+        opacity: 0;
+    }
+
+    to {
+        transform:
+            translateX(-50%)
+            translateY(0);
+
+        opacity: 1;
+    }
+
+}
+
+
+@keyframes cakeMiddleDrop {
+
+    from {
+        transform:
+            translateX(-50%)
+            translateY(-500px);
+
+        opacity: 0;
+    }
+
+    to {
+        transform:
+            translateX(-50%)
+            translateY(0);
+
+        opacity: 1;
+    }
+
+}
+
+
+@keyframes cakeTopDrop {
+
+    from {
+        transform:
+            translateX(-50%)
+            translateY(-500px);
+
+        opacity: 0;
+    }
+
+    to {
+        transform:
+            translateX(-50%)
+            translateY(0);
+
+        opacity: 1;
+    }
+
+}
+
+
+/* ===================================
+   CANDLES
+=================================== */
+
+.candles {
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 235px;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    gap: 22px;
+
+    z-index: 10;
+}
+
+
+.candle {
+
+    width: 14px;
+    height: 55px;
+
+    background: #d98ca5;
+
+    border-radius: 4px;
+
+    position: relative;
+
+    opacity: 0;
+}
+
+
+/* Different falling times */
+
+.candle-1 {
+    animation:
+        candleDrop 0.7s ease 2.5s forwards;
+}
+
+.candle-2 {
+    animation:
+        candleDrop 0.7s ease 2.7s forwards;
+}
+
+.candle-3 {
+    animation:
+        candleDrop 0.7s ease 2.9s forwards;
+}
+
+.candle-4 {
+    animation:
+        candleDrop 0.7s ease 3.1s forwards;
+}
+
+.candle-5 {
+    animation:
+        candleDrop 0.7s ease 3.3s forwards;
+}
+
+
+@keyframes candleDrop {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(-400px)
+            rotate(10deg);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            rotate(0);
+    }
+
+}
+
+
+/* ===================================
+   FLAMES
+=================================== */
+
+.flame {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: -18px;
+
+    transform: translateX(-50%);
+
+    width: 12px;
+    height: 18px;
+
+    background: #f4a261;
+
+    border-radius: 50% 50% 50% 50%;
+
+    opacity: 0;
+
+    animation:
+        flameAppear 0.5s ease 4s forwards,
+        flameMove 0.8s ease-in-out 4.5s infinite alternate;
+}
+
+
+@keyframes flameAppear {
+
+    from {
+        opacity: 0;
+        transform:
+            translateX(-50%)
+            scale(0);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateX(-50%)
+            scale(1);
+    }
+
+}
+
+
+@keyframes flameMove {
+
+    from {
+        transform:
+            translateX(-50%)
+            scale(1);
+    }
+
+    to {
+        transform:
+            translateX(-50%)
+            scale(1.15);
+    }
+
+}
+
+
+/* ===================================
+   CAKE MESSAGE
+=================================== */
+
+.cake-message {
+
+    text-align: center;
+
+    margin-top: 20px;
+
+    opacity: 0;
+
+    animation:
+        messageAppear 1s ease 4.5s forwards;
+}
+
+
+.cake-message p {
+
+    font-size: 24px;
+
+    margin-bottom: 25px;
+}
+
+
+#cakeNextBtn {
+
+    padding: 14px 30px;
+
+    border-radius: 50px;
+
+    border: 1px solid #d98ca5;
+
+    background: white;
+
+    color: black;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+#cakeNextBtn:hover {
+
+    background: #d98ca5;
+
+    color: white;
+
+}
+
+
+@keyframes messageAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+/* ===================================
+   BALLOON SCENE
+=================================== */
+
+.balloon-scene {
+
+    display: none;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    background: white;
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+.balloon-header {
+
+    text-align: center;
+
+    margin-top: 30px;
+
+}
+
+
+.balloon-header h2 {
+
+    font-size: clamp(35px, 6vw, 60px);
+
+    font-weight: 400;
+
+    margin: 10px 0;
+
+}
+
+
+.balloon-header p:last-child {
+
+    font-family: Arial, sans-serif;
+
+    opacity: 0.6;
+
+}
+
+
+/* ===================================
+   BALLOON AREA
+=================================== */
+
+.balloon-area {
+
+    width: 100%;
+
+    max-width: 900px;
+
+    height: 450px;
+
+    margin: 20px auto;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 35px;
+
+}
+
+
+/* ===================================
+   BALLOON
+=================================== */
+
+.balloon-container {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    cursor: pointer;
+
+}
+
+
+.balloon {
+
+    width: 100px;
+
+    height: 125px;
+
+    background: #d98ca5;
+
+    border-radius:
+        50%
+        50%
+        48%
+        48%;
+
+    position: relative;
+
+    box-shadow:
+        inset -12px -15px 20px
+        rgba(0, 0, 0, 0.08),
+
+        0 12px 25px
+        rgba(217, 140, 165, 0.25);
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+.balloon:hover {
+
+    transform:
+        translateY(-12px)
+        scale(1.05);
+
+}
+
+
+/* Balloon highlight */
+
+.balloon::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 18px;
+
+    height: 35px;
+
+    background: rgba(255,255,255,0.45);
+
+    border-radius: 50%;
+
+    left: 20px;
+
+    top: 20px;
+
+    transform: rotate(20deg);
+
+}
+
+
+/* Number */
+
+.balloon span {
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: white;
+
+    font-size: 22px;
+
+    font-family: Arial, sans-serif;
+
+}
+
+
+/* ===================================
+   BALLOON KNOT
+=================================== */
+
+.balloon::after {
+
+    content: "";
+
+    position: absolute;
+
+    bottom: -8px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 0;
+
+    height: 0;
+
+    border-left: 8px solid transparent;
+
+    border-right: 8px solid transparent;
+
+    border-top: 12px solid #c97994;
+
+}
+
+
+/* ===================================
+   STRING
+=================================== */
+
+.balloon-string {
+
+    width: 1px;
+
+    height: 90px;
+
+    background: #aaa;
+
+}
+
+
+/* ===================================
+   FLOATING ANIMATION
+=================================== */
+
+.balloon-container:nth-child(1) {
+
+    animation: floatBalloon 3s ease-in-out infinite;
+
+}
+
+
+.balloon-container:nth-child(2) {
+
+    animation:
+        floatBalloon 3.5s ease-in-out
+        0.5s infinite;
+
+}
+
+
+.balloon-container:nth-child(3) {
+
+    animation:
+        floatBalloon 3.2s ease-in-out
+        0.8s infinite;
+
+}
+
+
+.balloon-container:nth-child(4) {
+
+    animation:
+        floatBalloon 3.7s ease-in-out
+        0.3s infinite;
+
+}
+
+
+.balloon-container:nth-child(5) {
+
+    animation:
+        floatBalloon 3.3s ease-in-out
+        1s infinite;
+
+}
+
+
+@keyframes floatBalloon {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-20px);
+
+    }
+
+}
+
+
+/* ===================================
+   POP ANIMATION
+=================================== */
+
+.balloon-container.popped {
+
+    animation:
+        balloonPop 0.35s ease forwards;
+
+}
+
+
+@keyframes balloonPop {
+
+    0% {
+
+        transform: scale(1);
+
+        opacity: 1;
+
+    }
+
+    50% {
+
+        transform: scale(1.3);
+
+    }
+
+    100% {
+
+        transform: scale(0);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+/* ===================================
+   MESSAGE CARD
+=================================== */
+
+.balloon-message {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: none;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background:
+        rgba(255,255,255,0.75);
+
+    backdrop-filter: blur(8px);
+
+    z-index: 100;
+
+}
+
+
+.message-card {
+
+    width: min(500px, 85%);
+
+    padding: 50px 35px;
+
+    background: white;
+
+    border:
+
+        1px solid #efd0da;
+
+    border-radius: 25px;
+
+    box-shadow:
+
+        0 25px 60px
+        rgba(0,0,0,0.12);
+
+    text-align: center;
+
+    position: relative;
+
+    animation:
+        messageCardIn
+        0.5s ease forwards;
+
+}
+
+
+.message-card p {
+
+    font-size: 24px;
+
+    line-height: 1.6;
+
+}
+
+
+.close-message {
+
+    position: absolute;
+
+    top: 15px;
+
+    right: 20px;
+
+    border: none;
+
+    background: none;
+
+    font-size: 30px;
+
+    cursor: pointer;
+
+    color: #777;
+
+}
+
+
+@keyframes messageCardIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(30px)
+            scale(0.9);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+/* ===================================
+   NEXT BUTTON
+=================================== */
+
+.balloon-next {
+
+    display: none;
+
+    margin: 10px auto 30px;
+
+    padding: 14px 30px;
+
+    border:
+
+        1px solid #d98ca5;
+
+    border-radius: 50px;
+
+    background: white;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+}
+
+
+.balloon-next:hover {
+
+    background: #d98ca5;
+
+    color: white;
+
+}
+
+
+/* ===================================
+   MOBILE
+=================================== */
+
+@media (max-width: 700px) {
+
+    .balloon-area {
+
+        height: 420px;
+
+        gap: 12px;
+
+        flex-wrap: wrap;
+
+        padding: 20px;
+
+    }
+
+
+    .balloon {
+
+        width: 70px;
+
+        height: 90px;
+
+    }
+
+
+    .balloon-string {
+
+        height: 50px;
+
+    }
+
+
+    .balloon-header h2 {
+
+        font-size: 34px;
+
+    }
+
+
+    .message-card p {
+
+        font-size: 19px;
+
+    }
+
+}
+/* ============================================
+   SCENE 4 — MEMORY JOURNEY
+============================================ */
+
+.memory-scene {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    min-height: 100vh;
+    height: 100vh;
+
+    padding: 25px 20px;
+
+    text-align: center;
+    background: #fff;
+
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.memory-header {
+    margin-bottom: 25px;
+}
+
+.memory-header h2 {
+    font-size: 42px;
+    margin: 8px 0;
+    color: #111;
+}
+
+.memory-header p:last-child {
+    color: #777;
+    font-size: 16px;
+}
+
+.memory-card {
+    width: min(90%, 500px);
+    padding: 18px;
+    background: white;
+    border-radius: 24px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.memory-photo-wrapper {
+    width: 100%;
+    min-height: 200px;
+    .memory-photo-wrapper img {
+    max-height: 55vh;
+}
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+    border-radius: 18px;
+    background: #f7e8ed;
+}
+
+.memory-photo-wrapper img {
+    display: block;
+    width: 100%;
+    height: auto;
+
+    max-width: 100%;
+    .memory-photo-wrapper img {
+    max-height: 55vh;
+}
+
+    object-fit: contain;
+
+    border-radius: 18px;
+
+    transition: opacity 0.4s ease,
+                transform 0.4s ease;
+}
+
+.memory-counter {
+    margin: 15px 0 5px;
+    color: #999;
+    font-size: 14px;
+}
+
+.memory-caption {
+    margin: 8px 10px 15px;
+    font-size: 20px;
+    line-height: 1.5;
+    color: #222;
+    min-height: 30px;
+}
+
+.memory-controls {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.memory-controls button,
+#memoryContinueBtn {
+    border: none;
+    padding: 13px 24px;
+    border-radius: 30px;
+    background: #d98ca5;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.memory-controls button:hover,
+#memoryContinueBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(217, 140, 165, 0.35);
+}
+
+#memoryContinueBtn {
+    margin-top: 20px;
+    display: none;
+    background: #111;
+}
+
+#memoryContinueBtn.show {
+    display: block;
+}
+
+/* Photo animation */
+
+.memory-photo-enter {
+    opacity: 0;
+    transform: scale(0.96);
+}
+
+.memory-photo-show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .memory-header h2 {
+        font-size: 30px;
+    }
+
+    .memory-photo-wrapper {
+        height: 360px;
+    }
+
+    .memory-caption {
+        font-size: 17px;
+    }
+
+    .memory-controls button {
+        padding: 11px 18px;
+    }
+}
+/* ============================================
+   SCENE 5 — PREMIUM LETTER
+============================================ */
+
+.letter-scene {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 100vh;
+    padding: 30px 20px;
+
+    background: #fff;
+    text-align: center;
+    overflow: hidden;
+}
+
+.letter-intro {
+    margin-bottom: 35px;
+}
+
+.letter-intro h2 {
+    font-size: 42px;
+    margin: 8px 0;
+    color: #111;
+}
+
+.letter-intro p:last-child {
+    color: #777;
+}
+
+
+/* ============================================
+   ENVELOPE
+============================================ */
+
+.envelope-wrapper {
+    position: relative;
+    width: 360px;
+    height: 250px;
+
+    perspective: 1000px;
+
+    animation: envelopeFloat 3s ease-in-out infinite;
+}
+
+.envelope {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Back of envelope */
+
+.envelope-back {
+    position: absolute;
+    inset: 0;
+
+    background: #f3c6d4;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.15);
+
+    z-index: 1;
+}
+
+
+/* Letter */
+
+.letter-paper {
+    position: absolute;
+
+    width: 88%;
+    height: 310px;
+
+    left: 6%;
+    bottom: 15px;
+
+    background: #fff;
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.12);
+
+    z-index: 2;
+
+    transform: translateY(80px);
+
+    transition:
+        transform 1.2s ease,
+        z-index 0s 0.6s;
+
+    overflow-y: auto;
+}
+
+
+/* Letter content */
+
+.letter-content {
+    padding: 22px;
+
+    text-align: left;
+
+    font-family: Georgia, serif;
+
+    color: #222;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+.letter-content h3 {
+    margin-top: 0;
+
+    text-align: center;
+
+    color: #c56f8b;
+
+    font-size: 22px;
+}
+
+.letter-content p {
+    margin: 8px 0;
+}
+
+.letter-signature {
+    text-align: right;
+
+    margin-top: 15px !important;
+
+    font-style: italic;
+
+    color: #c56f8b;
+}
+
+
+/* Front of envelope */
+
+.envelope-front {
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 58%;
+
+    background: #e9aabd;
+
+    clip-path: polygon(
+        0 0,
+        50% 65%,
+        100% 0,
+        100% 100%,
+        0 100%
+    );
+
+    z-index: 4;
+}
+
+
+/* Envelope flap */
+
+.envelope-flap {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 60%;
+
+    background: #f0b8c9;
+
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        50% 75%
+    );
+
+    transform-origin: top center;
+
+    transition:
+        transform 1s ease;
+
+    z-index: 5;
+}
+
+
+/* ============================================
+   HEART SEAL
+============================================ */
+
+.heart-seal {
+    position: absolute;
+
+    left: 50%;
+    top: 51%;
+
+    transform: translate(-50%, -50%);
+
+    width: 62px;
+    height: 62px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #fff;
+
+    color: #d46f8e;
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+    z-index: 6;
+
+    box-shadow:
+        0 6px 20px rgba(0, 0, 0, 0.15);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.heart-seal:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ============================================
+   OPEN ENVELOPE
+============================================ */
+
+.envelope.open .envelope-flap {
+    transform: rotateX(180deg);
+
+    z-index: 1;
+}
+
+.envelope.open .letter-paper {
+    transform: translateY(-145px);
+
+    z-index: 7;
+}
+
+
+/* ============================================
+   HINT
+============================================ */
+
+.letter-hint {
+    margin-top: 30px;
+
+    color: #888;
+
+    font-size: 15px;
+
+    transition: opacity 0.4s ease;
+}
+
+
+/* ============================================
+   NEXT BUTTON
+============================================ */
+
+.letter-next {
+    display: none;
+
+    margin-top: 25px;
+
+    border: none;
+
+    padding: 14px 28px;
+
+    border-radius: 30px;
+
+    background: #111;
+
+    color: #fff;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.letter-next.show {
+    display: block;
+}
+
+.letter-next:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ============================================
+   FLOATING ANIMATION
+============================================ */
+
+@keyframes envelopeFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+
+/* ============================================
+   MOBILE
+============================================ */
+
+@media (max-width: 600px) {
+
+    .letter-intro h2 {
+        font-size: 30px;
+    }
+
+    .envelope-wrapper {
+        width: 310px;
+        height: 215px;
+    }
+
+    .letter-paper {
+        .letter-paper {
+    height: 270px;
+}
+    }
+
+    .letter-content {
+        padding: 16px;
+
+        font-size: 12px;
+    }
+
+    .heart-seal {
+        width: 55px;
+        height: 55px;
+
+        font-size: 24px;
+    }
+
+    .envelope.open .letter-paper {
+        transform: translateY(-125px);
+    }
+}
+/* ============================================
+   SCENE 6 — FINAL FIREWORKS
+============================================ */
+
+.final-scene {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    padding: 0;
+    margin: 0;
+
+    background: #000;
+
+    overflow: hidden;
+
+    z-index: 9999;
+}
+
+/* Fireworks canvas */
+
+#fireworksCanvas {
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    z-index: 1;
+}
+
+/* ============================================
+   FINAL BIRTHDAY MESSAGE
+============================================ */
+
+.final-message {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 90%;
+
+    text-align: center;
+
+    z-index: 10;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition: opacity 2.5s ease;
+}
+
+.final-message.show {
+    opacity: 1;
+}
+
+.final-small-text {
+    margin-bottom: 12px;
+
+    color: rgba(255, 255, 255, 0.85);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+
+    letter-spacing: 7px;
+
+    text-transform: uppercase;
+}
+
+.final-message h1 {
+    margin: 0;
+
+    color: #fff;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(34px, 7vw, 82px);
+
+    line-height: 1.15;
+
+    letter-spacing: 3px;
+
+    text-shadow:
+        0 0 8px rgba(255, 255, 255, 0.9),
+        0 0 20px rgba(255, 170, 200, 0.8),
+        0 0 45px rgba(255, 100, 160, 0.6),
+        0 0 80px rgba(255, 255, 255, 0.4);
+
+    animation: birthdayGlow 2s ease-in-out infinite alternate;
+}
+
+.final-hearts {
+    margin-top: 18px;
+
+    font-size: 25px;
+
+    letter-spacing: 10px;
+
+    filter:
+        drop-shadow(0 0 8px rgba(255, 100, 160, 0.9))
+        drop-shadow(0 0 20px rgba(255, 255, 255, 0.6));
+}
+
+
+/* ============================================
+   TEXT GLOW
+============================================ */
+
+@keyframes birthdayGlow {
+
+    from {
+        opacity: 0.85;
+
+        text-shadow:
+            0 0 8px rgba(255, 255, 255, 0.8),
+            0 0 20px rgba(255, 170, 200, 0.6),
+            0 0 40px rgba(255, 100, 160, 0.4);
+    }
+
+    to {
+        opacity: 1;
+
+        text-shadow:
+            0 0 10px #fff,
+            0 0 25px rgba(255, 190, 220, 1),
+            0 0 50px rgba(255, 100, 160, 0.9),
+            0 0 90px rgba(255, 255, 255, 0.6);
+    }
+}
+
+
+/* ============================================
+   MOBILE
+============================================ */
+
+@media (max-width: 600px) {
+
+    .final-small-text {
+        font-size: 10px;
+
+        letter-spacing: 4px;
+    }
+
+    .final-message h1 {
+        font-size: 34px;
+
+        letter-spacing: 1px;
+    }
+
+    .final-hearts {
+        font-size: 20px;
+
+        letter-spacing: 6px;
+    }
+}
